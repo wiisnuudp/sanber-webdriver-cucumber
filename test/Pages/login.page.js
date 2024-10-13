@@ -1,6 +1,6 @@
 class LoginPage{
     get usernameInput() {
-        return $('#user-name'); // locator field username
+        return $('#email'); // locator field username
     }
 
     get passwordInput() {
@@ -8,23 +8,26 @@ class LoginPage{
     }
 
     get loginButton() {
-        return $('#login-button'); // locator login button
+        return $('//button[@type="submit"]'); // locator login button
     }
     
     get errorMsg() {
-        return $("//h3[data-test='error']"); // locator error message
+        return $("//div[@role='alert']"); // locator error message
     }
 
     //Disini didefinisikan action yang akan dilakukan kepada element
+  
   async login(username, password) {
     await this.usernameInput.setValue(username);
     await this.passwordInput.setValue(password);
     await this.loginButton.click();
+    // await browser.setTimeout({ 'implicit': 5000 })
+    
   }
 
   async assertErrorMessage(expectedErrorMessage) {
     
-    await expect(this.errorMsg).toHaveTextContaining(expectedErrorMessage);
+    await expect(this.errorMsg).toHaveText(expectedErrorMessage);
   }
 
   async getErrorMessage() {

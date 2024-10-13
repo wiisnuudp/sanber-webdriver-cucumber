@@ -1,18 +1,16 @@
 Feature: Saucedemo login test
 
+    @test @negative
+    Scenario: Verify login failed with invalid credential
+        Given I open kasirdemo website
+        When I login with invalid credential
+        Then I should see an error message credential
     
+    @test @positive
     Scenario: Login successfull with valid credential
-        Given I open saucedemo website
+        Given I open kasirdemo website
         When I login with valid credential
-        Then I should be on inventory page
+        Then I should be on dashboard page
 
 
-    Scenario: Verify login failed with invalid username
-        Given I open saucedemo website
-        When I login with invalid username
-        Then I should see an error message
-
-    Scenario: Verify login failed with invalid password
-        Given I open saucedemo website
-        When I login with invalid password
-        Then I should see an error message
+    

@@ -1,3 +1,5 @@
+const { glob } = require("glob");
+
 exports.config = {
     //
     // ====================
@@ -21,7 +23,7 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/features/**/*.feature'
+        './test/features/product.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -85,7 +87,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://www.saucedemo.com',
+    baseUrl: 'https://kasirdemo.vercel.app/login',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -129,7 +131,7 @@ exports.config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['test/stepDefinition/*.js'],
+        require: glob.sync('./test/stepDefinition/product.step.js'),
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)

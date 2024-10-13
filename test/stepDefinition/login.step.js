@@ -3,21 +3,19 @@ const Page = require('../Pages/page');
 const LoginPage = require('../Pages/login.page');
 
 
-Given(/^I open saucedemo website$/, async () => {
-    await Page.open('/')
+Given(/^I open kasirdemo website$/, async () => {
+        await Page.open('/') 
 })
-When(/^ login with valid credential$/, async () => {
-    await LoginPage.login('standard_user', 'secret_sauce');
+When(/^I login with invalid credential$/, async () => {
+    await LoginPage.login('testt@email.com', 'test23');
 })
-Then(/^I should be on inventory page$/, async () => {
-    await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
+Then(/^I should see an error message credential$/, async () => {
+    await LoginPage.assertErrorMessage('Kredensial yang Anda berikan salah');
 })
-When(/^I login with invalid username$/, async () => {
-    await LoginPage.login('invalid_user', 'secret_sauce');
+
+When(/^I login with valid credential$/, async () => {
+    await LoginPage.login('testt@email.com', 'testing123');
 })
-When(/^I login with invalid password$/, async () => {
-    await LoginPage.login('standard_user', 'invalid_password');
-})
-Then(/^I should see an error message$/, async () => {
-    await LoginPage.assertErrorMessage('Epic sadface: Username and password do not match any user in this service');
+Then(/^I should be on dashboard page$/, async () => {
+    await expect(browser).toHaveUrl('https://kasirdemo.vercel.app/dashboard');
 })
