@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": ".//*[contains(@id, \"id\") and normalize-space(text()) = \"\"chakra-toast-manager-top-right\"\"] | .//*[contains(@id, \"id\") and not(.//*[contains(@id, \"id\") and normalize-space(text()) = \"\"chakra-toast-manager-top-right\"\"]) and normalize-space() = \"\"chakra-toast-manager-top-right\"\"]"
-}

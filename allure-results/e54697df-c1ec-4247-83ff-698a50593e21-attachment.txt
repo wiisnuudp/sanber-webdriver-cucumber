@@ -1,3 +1,0 @@
-{
-  "text": "ini deskripsi"
-}

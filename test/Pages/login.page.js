@@ -21,7 +21,7 @@ class LoginPage{
     await this.usernameInput.setValue(username);
     await this.passwordInput.setValue(password);
     await this.loginButton.click();
-    // await browser.setTimeout({ 'implicit': 5000 })
+    await browser.setTimeout({ 'implicit': 5000 })
     
   }
 

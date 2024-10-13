@@ -51,7 +51,6 @@ class ProductPage {
     async kategori() {
         await this.kategoriProduct.click()
         await this.barang.click()
-        await this.saveBtn.click()
     }
 
     async isiData(nama, deskripsi, hrgBeli, hrgJual, stok) {

@@ -25,7 +25,6 @@ Then(/^I see an alert message$/, async() => {
 When(/^I fill field$/, async () => {
     await ProductPage.isiData('ini nama', 'ini deskripsi', '500', '1000','5');
     await ProductPage.kategori();
-    // await ProductPage.save();
 })
 Then(/^I should see pop up success message$/, async() => {
     await ProductPage.assertSuccessMessage('item ditambahkan');
