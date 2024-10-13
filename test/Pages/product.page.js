@@ -30,10 +30,12 @@ class ProductPage {
         return $('//button[@class="chakra-button css-l5lnz6"]');
     }
     get popupSuccess() {
-        return $('//li[@class="chakra-toast"]');
+        return $('//div[@class="chakra-alert__desc css-zycdy9"]'); //li[@class="chakra-toast"]
+        
     }
     get alertProduct() {
         return $('//div[@class="chakra-alert css-qwanz3"]')
+         
     }
 
     async product() {
